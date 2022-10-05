@@ -35,6 +35,7 @@ int[] GetArray(int size, int minValue, int maxValue)
 // [3, 7, 23, 12] -> 19
 // [-4, -6, 89, 6] -> 0
 
+/*
 int[] array = GetArray(5, -99, 100);
 Console.WriteLine(String.Join(" ", array));
 
@@ -58,3 +59,37 @@ int[] GetArray(int size, int minValue, int maxValue)
     }
     return res;
     }
+*/
+
+
+//Задача 38: Задайте массив вещественных чисел. Найдите разницу между максимальным и минимальным элементов массива.
+// [3 7 22 2 78] -> 76
+
+double[] numbers = new double[5];
+GetArray(numbers);
+double min = Int32.MaxValue;
+double max = Int32.MinValue;
+
+for (int a = 0; a < numbers.Length; a++)
+{
+    if (numbers[a] > max)
+        {
+            max = numbers[a];
+        }
+    if (numbers[a] < min)
+        {
+            min = numbers[a];
+        }
+}
+
+Console.WriteLine();
+Console.WriteLine($"{max} - {min} = {max - min}");
+
+void GetArray(double[] numbers)
+{
+    for(int i = 0; i < numbers.Length; i++)
+        {
+            numbers[i] = Convert.ToDouble(new Random().Next(100,1000)) / 100;
+            Console.Write(numbers[i] + " ");
+        }
+}
